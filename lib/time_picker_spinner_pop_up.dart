@@ -458,11 +458,13 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
               right: right - 10,
               top: top == null ? null : (top - 10),
               bottom: bottom == null ? null : (bottom - 10),
-              child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: 270 * value,
-                  ),
-                  child: SingleChildScrollView(child: menu)),
+              child: SafeArea(
+                child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: 270 * value,
+                    ),
+                    child: SingleChildScrollView(child: menu)),
+              ),
             );
           },
         );
